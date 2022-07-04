@@ -14,7 +14,7 @@ export default NextAuth({
     signIn:'/auth/signin'  },
     callbacks :{
       async session ({session,token,user}) {
-        if (!session) return ;
+        if (!session) return {} ;
         session.user.id  = token.sub;
         return session;
       }
