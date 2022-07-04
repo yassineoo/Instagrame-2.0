@@ -18,7 +18,7 @@ export default function Stories() {
   return (
     <div className='flex space-x-2 p-6 bg-white border-gray-300 
     overflow-x-scroll scrollbar-thin scrollbar-thumb-black'>
-    {session &&( <Story img ={session.user.image} name = {session.user.name}/>)}
+    {session &&( <Story img ={session?.user.image} name = {session?.user.name}/>)}
     {suggestion?.map(profile => (
         <Story img={profile.avatar} name = {profile.name} key={profile.id}/>
     )

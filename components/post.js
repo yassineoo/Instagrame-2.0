@@ -47,9 +47,9 @@ useEffect(() =>
 
 const likePost = async() =>{
   if (hasLiked) {
-   await deleteDoc(doc(db,'posts' ,id,'likes',session.user.id))
+   await deleteDoc(doc(db,'posts' ,id,'likes',session?.user.id))
   } 
-  else await setDoc(doc(db,'posts' ,id,'likes',session.user.id),{username:session.user.name})
+  else await setDoc(doc(db,'posts' ,id,'likes',session?.user.id),{username:session?.user.name})
 }
 
 const sendComment =async (e) => {
@@ -58,8 +58,8 @@ const sendComment =async (e) => {
   setComment('');
   await addDoc(collection (db, 'posts' , id ,'comments'),{
     comment :commentToSend,
-    name :session.user.name,
-    image : session.user.image,
+    name :session?.user.name,
+    image : session?.user.image,
     timestamp : serverTimestamp(),
   })
 

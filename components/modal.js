@@ -24,9 +24,9 @@ export default function Modal() {
         // Upload the image 
         // get download url
         // update the original post
-        const docRef = await addDoc(collection(db , 'posts') , {username :session.user.name
+        const docRef = await addDoc(collection(db , 'posts') , {username :session?.user.name
         ,caption : captionRef.current.value,
-        profileImg : session.user.image ,
+        profileImg : session?.user.image ,
         timestamp :serverTimestamp(),
 
      });
