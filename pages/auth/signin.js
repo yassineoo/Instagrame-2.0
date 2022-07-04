@@ -1,8 +1,9 @@
 
 import {getProviders ,signIn as signInIntoProvider} from 'next-auth/react'
+import { useState , useEffect } from 'react';
 
 import Header from '../../components/header';
-export default function signIn (){
+export default function SignIn (){
   const [providers, setProviders] = useState(null);
 
   useEffect(() => {
