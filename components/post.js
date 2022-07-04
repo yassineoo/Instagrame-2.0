@@ -42,8 +42,9 @@ onSnapshot (
 ,[db,id])
 useEffect(() => 
   setHasLiked ( 
-    likes.findIndex((like) => (like.id === session.user.id)) !==-1
+    likes.findIndex((like) => (like.id === session?.user.id)) !==-1
   ) ,[likes])
+  
 
 const likePost = async() =>{
   if (hasLiked) {
