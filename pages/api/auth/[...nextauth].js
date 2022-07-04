@@ -13,7 +13,8 @@ export default NextAuth({
     signIn:'/auth/signin'  },
     callbacks :{
       async session ({session,token,user}) {
-        session.user.id  = token.sub
+        if (!session) return ;
+        session?.user?.id  = token.sub
         return session;
       }
     }
