@@ -7,7 +7,7 @@ export default NextAuth({
       clientId: process.env.Google_ID,
       clientSecret: process.env.Google_SECRET,
     }),
-    // ...add more providers here
+   
   ],
   secret: process.env.NEXT_PUBLIC_SECRET,
   pages:{

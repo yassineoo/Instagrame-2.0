@@ -2,8 +2,15 @@
 import {getProviders ,signIn as signInIntoProvider} from 'next-auth/react'
 
 import Header from '../../components/header';
-export default function signIn ({providers}){
+export default function signIn (){
+  const [providers, setProviders] = useState(null);
 
+  useEffect(() => {
+    (async () => {
+      const res = await getProviders();
+      setProviders(res);
+    })();
+  }, []);
     return (
         <div className=''>
           <Header/> 
@@ -29,10 +36,3 @@ export default function signIn ({providers}){
 
 
 }
-export async function getServerSideProps(context) {
-    const providers = await getProviders()
-
-    return {
-      props: { providers },
-    }
-  }
