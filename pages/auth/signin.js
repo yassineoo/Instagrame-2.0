@@ -4,7 +4,7 @@ import { useState , useEffect } from 'react';
 
 import Header from '../../components/header';
 export default function SignIn (){
-  const [providers, setProviders] = useState(null);
+  const [providers, setProviders] = useState({});
 
   useEffect(() => {
     (async () => {
@@ -21,7 +21,8 @@ export default function SignIn (){
               <img  className='w-80'
               src='https://links.papareact.com/ocw' alt='logo'/>
                       <div className='mt-40 mx-auto'>
-                        {Object.entries(providers).map(([key,provider]) => (
+                        {
+                          Object.entries(providers).map(([key,provider]) => (
                         
                               <div key={key} >
 
